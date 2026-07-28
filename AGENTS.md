@@ -153,7 +153,9 @@ Reach for the document that matches where you are:
 
 **`main` is production.** Tagged releases only, tested, sign-off given. `dev` is the persistent integration branch and where previews deploy from. Never push `main` without explicit approval.
 
-**Test by driving the real thing.** Claude-in-Chrome, throwaway scripts, actual end-to-end runs against the deployed preview — not `localhost`, and never by handing Sean a testing task. If you believe something is untestable, that belief is the thing to check first.
+**Test by driving the real thing.** Claude-in-Chrome, dev tools, throwaway scripts, actual end-to-end runs against the deployed preview — not `localhost`, and never by handing Sean a testing task. If you believe something is untestable, that belief is the thing to check first.
+
+**Use the browser without asking.** Claude-in-Chrome is fully permitted, including the JavaScript tool and the console and network readers, and it drives its own Chrome instance rather than Sean's daily browser — so there is no reason to hesitate, ask permission, or describe what you would test instead of testing it. He would rather you reached for it unprompted than shipped something unverified.
 
 **★ Full flow — branching, merging, tags, environments, key discipline: `~/.agents/protocol/GIT_AND_DEPLOY.md`**
 
