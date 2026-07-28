@@ -32,7 +32,7 @@
 - `~/.agents/references/EMOTION_DRIVEN_COPYWRITING.md`
 - `~/.agents/references/SHARED_REPO_SITE.md`
 
-**Templates:** `~/.agents/templates/` — `PROJECT_NAME.md`, `README.md`, `IMPLEMENT.md`, `COMPACT_ARG_example.md`
+**Templates:** `~/.agents/templates/` — `PROJECT_NAME.md`, `README.md`, `GOALS.md`, `IMPLEMENT.md`, `COMPACT_ARG_example.md`
 
 **Skills:** `~/.agents/skills/` — globally installed, shared across every project.
 
@@ -81,7 +81,7 @@ How you show up. Behaviors, not positions to agree with.
 
 ## IV. STARTING A PROJECT
 
-**Never write the architecture doc or the README from scratch.** Copy `~/.agents/templates/PROJECT_NAME.md` into the project as its living architecture document, renamed for the project, and `~/.agents/templates/README.md` as the base README. They improve every time they are adapted, and those improvements flow back into the templates.
+**Never write the architecture doc, the README, or the goals doc from scratch.** Copy `~/.agents/templates/PROJECT_NAME.md` into the project as its living architecture document (renamed for the project), `~/.agents/templates/README.md` as the base README, and `~/.agents/templates/GOALS.md` as the starting `assets/docs/GOALS.md` — seeded from whatever concept document, high-level requirements, or descriptive UX/UI writing kicked the project off. All three improve every time they are adapted, and those improvements flow back into the templates.
 
 ```bash
 cd ~/Development && mkdir <project> && cd <project>
@@ -95,7 +95,7 @@ git checkout -b dev
 
 `_git_init/` carries `.agents/AGENTS.md` and `.cursor/CURSOR.md` — both one-line redirects to this file. Nothing else about this protocol lives in a project.
 
-**In the first session**, `PROJECT_NAME.md`, `README.md`, and `GOALS.md` become the project's source of truth. Keep them that way.
+**In the first session**, `PROJECT_NAME.md`, `README.md`, and `GOALS.md` become the project's source of truth. Keep them that way — § V names the full set of core files and the session-close habit that keeps them honest.
 
 ---
 
@@ -103,11 +103,13 @@ git checkout -b dev
 
 **Read the ★ list first**, in the order given. Architecture before plan, plan before code.
 
+**The core files.** Four things every session is responsible for: this project's auto-memory, `GOALS.md`, the architecture doc (`PROJECT_NAME.md`), and `README.md`. All four get created together at the start — a project's start, or a new initiative's start inside an existing project (§ VI) — and every session closes by checking whether each one is still true, updating what drifted. The three docs travel with the repo; auto-memory does not, and its job is different — it carries the connective tissue between sessions instead.
+
 **Keep the goals current.** `<project>/assets/docs/GOALS.md` holds what the project is *for*. It usually starts from the first document that pitched the concept — high-level requirements, or just descriptive UI/UX writing — and accumulates north stars as the project reveals them. Collect them as you go; this is never written once.
 
 It is load-bearing twice over. **The whole plan is built around the goals, end to end** — they are what the build is *for*, not a document you consult at the end. And **they are the lens every review reads through — your own self-gap-review, the breadth passes, and the formal gate alike.** Without them a reviewer reads missing functionality as a deliberate choice rather than a gap, and you lose the thing the whole method exists to catch. They also let you answer Sean's fork questions yourself instead of interrupting him. `~/.agents/protocol/GAP_REVIEW.md` covers how they get used.
 
-**Tend the auto-memory.** `~/.claude/projects/<project>/memory/` — keep it trimmed and current. The best memories come from the two-orchestrator pattern: a planning thread, then a fresh execution thread, each writing for the next.
+**Tend the auto-memory.** `~/.claude/projects/<project>/memory/` — keep it trimmed and current, and leave a note on what's next before a session ends, whatever kind of session it was. The best memories come from the two-orchestrator pattern (a planning thread, then a fresh execution thread, each writing for the next), but the habit is not limited to that pattern — a cold-started fresh instance should never have to reconstruct where things stood from git alone.
 
 **Git is the progress log.** Commit often — usually per file — with descriptive, per-file detail. The history *is* the record of what happened; there is no separate session-log or build-report file. Push freely to `dev`; **never to `main` without explicit sign-off**.
 
