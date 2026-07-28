@@ -1,0 +1,11 @@
+# Skills are installed and managed by the skills CLI (npx skills add).
+# They belong to their own upstream repos — not to this one.
+skills/
+.skill-lock.json
+
+# macOS
+.DS_Store
+
+# Temporary probe directories (filesystem rename test, 2026-07-28)
+new-file-yay-2026-07-18/
+human_things/
