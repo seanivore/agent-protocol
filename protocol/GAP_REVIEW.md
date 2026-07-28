@@ -45,7 +45,7 @@ One line of history worth keeping — angle A began precisely to flesh out neede
 
 **Actor:** the thread that starts the work. **That thread becomes the named Build Guide Orchestrator** and stays the orchestrator for the life of the guide.
 
-1. Write the IMPLEMENT beginning at **v1.0.0**, from those requirements, with the goals at the forefront.
+1. **Fold the concept document into `GOALS.md` first.** A new initiative inside an existing project arrives with its own concept document or requirements exactly like a new project does — that is a new north star to accumulate, not just IMPLEMENT content (`GOALS.md` never resets; see § V). Then write the IMPLEMENT beginning at **v1.0.0** from those same requirements, with the now-current goals at the forefront.
 2. Run deepening sessions: research, apply findings, surface decisions, push the plan as far as it will go. **Each session that meets its goals bumps PATCH.** Skipping the bump destroys the ability to say which version a finding was written against, and a finding validated against the wrong version is worse than no finding.
 
 **Exit condition:** the orchestrator judges the plan deep enough for formal preparation. That judgment is the only gate into Phase 2.
