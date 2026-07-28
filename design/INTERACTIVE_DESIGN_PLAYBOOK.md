@@ -2,7 +2,7 @@
 
 **Version**: v1.0.0 · **Last Updated**: 2026-07-09
 **Purpose**: how to *wield* the Interactive Design Language — the levers that produce caliber, a briefing checklist, and the vocabulary for feedback rounds. The Language is the WHAT; this is the HOW.
-**Companions**: `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md` (the vocabulary this directs), `.agents/_DESIGN/DESIGN_FUNNEL.md` (the funnel), `.agents/_DESIGN/CLAUDE_DESIGN_COLLAB.md` (the handoff).
+**Companions**: `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md` (the vocabulary this directs), `~/.agents/design/DESIGN_FUNNEL.md` (the funnel), `~/.agents/design/CLAUDE_DESIGN_COLLAB.md` (the handoff).
 
 > The funnel mechanics and the Claude Design handoff each live in their own doc. This one is the craft of briefing and iterating — what to ask for, and how to react.
 
@@ -69,7 +69,7 @@ Nine levers produce Fable-caliber work. Each scales down for a dashboard or a fo
 
 ## Research — where to look, what to search for
 
-The funnel's research lenses (and any "search current trends" brief) are only as good as where you point them. Send them to the cream of the crop, not template galleries — and filter everything through House taste (`.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md`).
+The funnel's research lenses (and any "search current trends" brief) are only as good as where you point them. Send them to the cream of the crop, not template galleries — and filter everything through House taste (`~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md`).
 
   + Where to look — curation and craft
     - award / curation: Awwwards, The FWA, CSS Design Awards, Godly, SiteInspire, Land-book, Minimal Gallery, Lapa Ninja, Refero
@@ -141,7 +141,7 @@ Shared language for iteration rounds — precise words that move the design inst
 
 ## Anti-slop acceptance checklist
 
-Paste this block into a brief as acceptance criteria. It is the compressed form of the craft bar in `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md`.
+Paste this block into a brief as acceptance criteria. It is the compressed form of the craft bar in `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md`.
 
 ```
 Acceptance criteria — treat as a checklist:

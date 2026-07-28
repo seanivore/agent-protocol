@@ -2,7 +2,7 @@
 
 **Version**: v1.4.0 · **Last Updated**: 2026-07-22 (v1.4.0: the under-specification doctrine — precision goes to the seam, looseness goes to the design; the two exact things; the prototype as a discovery tool. v1.3.0: the packet-is-CD's-whole-world rule — self-contained distillation, CD never reads build guides; fixed-elements named per surface; the architecture line stated. v1.2.0: the shape-varies-per-project section — three aesthetic-anchor paths incl. the human-direct CD session, CD-scope range; the packet gains the complete UI build list + per-surface functionality/UX descriptions; `REVERSE_GAPS.md` formalized as a first-class artifact)
 **Purpose**: how Claude Code and Claude Design build a real front end together — the handoff, the seam that keeps them safe, and the loop back for 1:1-synced fixes. Distinct from the funnel: the funnel *surfaces and ranks* directions; this *builds* the chosen one.
-**Companions**: `.agents/_DESIGN/DESIGN_FUNNEL.md` (surfacing/choosing the direction first), `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md` (the design-system reference you hand CD — its technique library plus the project's signature-moves spec cover animated-marketing-site FX; a separate ANIM_SITE recipe doc does not exist).
+**Companions**: `~/.agents/design/DESIGN_FUNNEL.md` (surfacing/choosing the direction first), `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md` (the design-system reference you hand CD — its technique library plus the project's signature-moves spec cover animated-marketing-site FX; a separate ANIM_SITE recipe doc does not exist).
 
 > The trigger principle: now that writing code is cheap, build the admin/creator experience with the same care as the end-user experience — treat the client like we treat the client's customers.
 
@@ -172,7 +172,7 @@ Describe the vocabulary and the mechanism, not just the visible content — I'm 
     - capturing everything (a true teardown)? use the full prompt as written
 
   + What to do with the result
-    - map its answers onto the axes in `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md` — that tells you exactly which dials to change to diverge
+    - map its answers onto the axes in `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md` — that tells you exactly which dials to change to diverge
     - feed items 7-8 into the next funnel spec's "§2 The bar" as the starting point to push *away* from
 
 ---

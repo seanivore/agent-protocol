@@ -4,7 +4,7 @@
   This is the design TARGET every funnel agent reads first (the `SPEC_PATH` in design_funnel.mjs).
   Fill every bracket. Keep it self-contained — the funnel agents see only this file, not the repo.
   Copy this file to the project (e.g. assets/docs/design/DESIGN_FUNNEL_SPEC.md) and point SPEC_PATH at it.
-  Author "§2 The bar" by choosing from .agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md.
+  Author "§2 The bar" by choosing from ~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md.
 
   NOTE (v2 framing, see DESIGN_FUNNEL.md): funnels are planned bespoke per run — this template matches
   the worked-example script (design_funnel.mjs). A bespoke funnel adapts or trims these sections to fit
@@ -20,7 +20,7 @@
 
 ## 2. The bar — the design direction to diverge across
 
-Chosen from `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md`. This is what makes the funnel render *distinct* worlds.
+Chosen from `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md`. This is what makes the funnel render *distinct* worlds.
 
 - **Archetype**: [scroll-narrative / single-task / practical-dashboard / data-decision / mobile-collection]
 - **Motion budget**: [high & narrative / low & functional / minimal & orienting — per the archetype map]
@@ -68,5 +68,5 @@ Chosen from `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md`. This is what makes
 ## 8. Success criteria
 
 - The rendered directions are **genuinely distinct** (different interaction models / lineages), not recolors of one idea.
-- Each passes the craft bar in `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md`.
+- Each passes the craft bar in `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md`.
 - [Project-specific: e.g. "feels like walking a trail, not scrubbing a slideshow."]

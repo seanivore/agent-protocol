@@ -2,8 +2,8 @@
 
 **Version**: v2.0.0 · **Last Updated**: 2026-07-21
 **Purpose**: a **loose, per-situation tool** — multi-agent rendering runs that surface several distinct rendered options to rank and pull pieces from. It is deliberately NOT one fixed procedure: funnels are not one-size-fits-all, and each one is **planned on the fly** from two inputs, then scripted bespoke for that run.
-**The two planning inputs** (know these before designing any funnel): **(1) what you're working with** — how much vision/palette/direction already exists — and **(2) what you need to figure out** — choosing between whole worlds? nuancing a decided look? surfacing one immaculate execution of a known surface? Once those two are clear, describe the funnel you want to the orchestrator/an agent, and it **authors a bespoke Workflow script for that run** — rounds, layers, agent counts, and models all sized to the job. `.agents/_DESIGN/design_funnel.mjs` is a **worked example** of such a script (the four-round shape below), not THE engine.
-**Companions**: `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md` (the axes + named starts to diverge across), `.agents/_DESIGN/INTERACTIVE_DESIGN_PLAYBOOK.md` (how to brief), `.agents/_DESIGN/CLAUDE_DESIGN_COLLAB.md` (the handoff after you pick).
+**The two planning inputs** (know these before designing any funnel): **(1) what you're working with** — how much vision/palette/direction already exists — and **(2) what you need to figure out** — choosing between whole worlds? nuancing a decided look? surfacing one immaculate execution of a known surface? Once those two are clear, describe the funnel you want to the orchestrator/an agent, and it **authors a bespoke Workflow script for that run** — rounds, layers, agent counts, and models all sized to the job. `~/.agents/design/design_funnel.mjs` is a **worked example** of such a script (the four-round shape below), not THE engine.
+**Companions**: `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md` (the axes + named starts to diverge across), `~/.agents/design/INTERACTIVE_DESIGN_PLAYBOOK.md` (how to brief), `~/.agents/design/CLAUDE_DESIGN_COLLAB.md` (the handoff after you pick).
 
 ---
 
@@ -50,7 +50,7 @@ Four rounds, run as a Workflow. ~two dozen agents; bounded; watch with `/workflo
   + After the run (the main loop does this, not the script)
     - save each render to its own file and open it
     - rank the directions; sanity-check them against the raw corpus
-    - carry the winner(s) into a Claude Design handoff (`.agents/_DESIGN/CLAUDE_DESIGN_COLLAB.md`)
+    - carry the winner(s) into a Claude Design handoff (`~/.agents/design/CLAUDE_DESIGN_COLLAB.md`)
 
 ### Seed divergence through Language
 
@@ -98,15 +98,15 @@ Peer agents inherit the orchestrator's model and effort by default. What you can
     - these are your *inspiration* references (translate them into the bar); keep them distinct from current-UI screenshots, which stay out of the funnel (see below)
 
   + Start from the template
-    - copy `.agents/_DESIGN/DESIGN_FUNNEL_SPEC.md` into the project (e.g. `assets/docs/design/DESIGN_FUNNEL_SPEC.md`) and point `SPEC_PATH` at it
+    - copy `~/.agents/design/DESIGN_FUNNEL_SPEC.md` into the project (e.g. `assets/docs/design/DESIGN_FUNNEL_SPEC.md`) and point `SPEC_PATH` at it
 
   + Fill it from the Language
-    - "§2 The bar" is where you choose the archetype, the motion budget, the axis leanings, and the named starts — all from `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md`
+    - "§2 The bar" is where you choose the archetype, the motion budget, the axis leanings, and the named starts — all from `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md`
     - keep it self-contained: the funnel agents see only the spec, so embed the essential content and constraints
 
   + Whether the funnel agents need the Language doc themselves
     - default: no — keep the spec self-contained, so embed the concrete meaning of any named start or axis term the spec uses, not just its name (a lens agent should not have to go read a dictionary to render faithfully)
-    - option: if you would rather reference than embed, tell the agents in the spec they may read `.agents/_DESIGN/INTERACTIVE_DESIGN_LANGUAGE.md` for the vocabulary — but the spec must still stand alone
+    - option: if you would rather reference than embed, tell the agents in the spec they may read `~/.agents/design/INTERACTIVE_DESIGN_LANGUAGE.md` for the vocabulary — but the spec must still stand alone
 
   + Keep the current UI out of it
     - do not feed the design agents the current-state screenshots — they design to the requirements, not the existing mess (keep those as your own reference)
@@ -121,7 +121,7 @@ Discussion with the orchestrator should occur to plan the funnel spec, helping b
     - every agent re-reads the spec itself, so a compacted or brand-new session runs it identically
 
   + How to run
-    - `Workflow({ scriptPath: '.agents/_DESIGN/design_funnel.mjs' })`
+    - `Workflow({ scriptPath: '~/.agents/design/design_funnel.mjs' })`
     - to resume after a pause or a script edit: `Workflow({ scriptPath, resumeFromRunId })` — unchanged agents return cached results, only new/edited ones re-run
 
   + The old bootstrap, modernised
@@ -130,8 +130,8 @@ Discussion with the orchestrator should occur to plan the funnel spec, helping b
 ### The script
 
   + Where the example lives
-    - `.agents/_DESIGN/design_funnel.mjs` — the worked-example R1–R4 script, multi-direction default
-    - `.agents/_DESIGN/DESIGN_FUNNEL_SPEC.md` — the per-project spec template it reads
+    - `~/.agents/design/design_funnel.mjs` — the worked-example R1–R4 script, multi-direction default
+    - `~/.agents/design/DESIGN_FUNNEL_SPEC.md` — the per-project spec template it reads
 
   + Running the example as-is: what you edit (the block at the top of the script)
     - `SPEC_PATH` — the filled spec

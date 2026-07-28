@@ -2,7 +2,7 @@
 
 **Version**: v1.0.0 · **Last Updated**: 2026-07-09
 **Purpose**: the reusable vocabulary for directing interactive and motion design — the WHAT you feed a design funnel and hand to Claude Design. It is not a template and not a style; it is a set of dials and a gallery of starting points. Pick a lean per axis, one or more named starts, and an archetype's motion budget, and you have a coherent, deliberately-different direction.
-**Companions**: `.agents/_DESIGN/INTERACTIVE_DESIGN_PLAYBOOK.md` (how to wield this), `.agents/_DESIGN/DESIGN_FUNNEL.md` (the funnel that consumes it), `.agents/_DESIGN/CLAUDE_DESIGN_COLLAB.md` (the handoff to Claude Design).
+**Companions**: `~/.agents/design/INTERACTIVE_DESIGN_PLAYBOOK.md` (how to wield this), `~/.agents/design/DESIGN_FUNNEL.md` (the funnel that consumes it), `~/.agents/design/CLAUDE_DESIGN_COLLAB.md` (the handoff to Claude Design).
 
 ---
 
@@ -15,7 +15,7 @@
     - the method: pick a lean per axis, one or more starts, an archetype's motion budget → a direction
 
   + Two places it gets used
-    - upstream of the funnel: it seeds the research lenses and the named directions the funnel renders (see `.agents/_DESIGN/DESIGN_FUNNEL.md`)
+    - upstream of the funnel: it seeds the research lenses and the named directions the funnel renders (see `~/.agents/design/DESIGN_FUNNEL.md`)
     - handed to Claude Design as the design-system reference — "match this vocabulary and these techniques, not any example's content"
 
   + The one-line seed for a direction
@@ -418,7 +418,7 @@ Named starting points — each a preset lean across the axes plus a signature-de
 
 ## The craft bar
 
-The tells that separate intentional, human-grade work from templated AI output. This is the reference version; the paste-into-a-brief checklist lives in `.agents/_DESIGN/INTERACTIVE_DESIGN_PLAYBOOK.md`.
+The tells that separate intentional, human-grade work from templated AI output. This is the reference version; the paste-into-a-brief checklist lives in `~/.agents/design/INTERACTIVE_DESIGN_PLAYBOOK.md`.
 
   + **A reason for every element** — each section advances a concept; motion serves the story, never the reverse
   + **Interactions that mean something** — each interactive element dramatizes a claim, not decoration
