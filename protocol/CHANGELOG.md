@@ -6,6 +6,18 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.1.0 — 2026-07-28 — GOALS.md becomes a full core file; a named cron exception
+
+**GOALS.md gets the same treatment as `PROJECT_NAME.md` and `README.md` now**: a template exists (`templates/GOALS.md`), § IV creates it explicitly at project start (seeded from the concept doc), and `GAP_REVIEW.md` Phase 1 makes explicit that a new initiative inside an existing project folds its own concept document into `GOALS.md` too, the same way a new project does — previously asserted as an outcome with no action step behind it.
+
+**§ V names "the core files"** — auto-memory, `GOALS.md`, `PROJECT_NAME.md`, `README.md` — as the four things every session checks and leaves true, and broadens the auto-memory habit from the two-orchestrator pattern specifically to a universal leave-a-note-on-what's-next practice.
+
+**`GIT_AND_DEPLOY.md` gains a named cron exception**: Vercel Cron fires only on the production deployment, never preview, so a project with scheduled tasks needs a narrow, still-signed-off early push of the minimal keep-alive/dispatcher slice to `main` to prove it fires — the smallest correct shape of the exception, not a corner cut.
+
+**Stale references fixed in `templates/PROJECT_NAME.md` and `templates/README.md`**: both still pointed at the retired `.agent/DEV_RULES.md` and the old bare `docs/` path, having survived the v5.0.0 rewrite untouched because templates aren't read at session start the way `AGENTS.md` is.
+
+---
+
 ## v5.0.0 — 2026-07-28 — Rewritten, and moved to one global home
 
 **The whole system was rewritten from its concepts rather than edited, and relocated to a single canonical copy at `~/.agents/`.**
