@@ -71,6 +71,8 @@ Commit often — usually per file — and word each message to mirror the slice 
 
 **Turn preview protection OFF during development.** Vercel SSO and deploy protection block agents from reaching endpoints. Turn it off on the preview while building, and back on before anything is public. Driving a protected preview through an already-authenticated browser is the fallback for when protection must stay on — not the default.
 
+**The cron exception.** Vercel Cron Jobs fire only on the production deployment, never on preview — so a project with scheduled or timed tasks cannot verify that behavior on `dev` no matter how solid everything else is. Where this applies, the sign-off gate narrows rather than disappears: push the smallest possible slice to `main` — the keep-alive ping or dispatcher scaffold alone, no front end, nothing it triggers yet — specifically to prove the schedule fires, then freeze `main` there until the real gate clears for everything else. A minimal backend-only push that proves the one thing preview can't is the correct shape of this exception, not a corner cut. It is still an explicit, named exception the orchestrator proposes and Sean signs off on — never a silent workaround for "I want to test something."
+
 ---
 
 ## Environment keys
