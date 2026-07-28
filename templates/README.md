@@ -51,7 +51,7 @@ cd [project-name]
 └── [config-files]        # Purpose
 ```
 
-**Full documentation**: [docs/PROJECT_NAME.md](docs/PROJECT_NAME.md) (or the equivalent project tech doc, e.g. `docs/THOT_APP.md`)
+**Full documentation**: [assets/docs/PROJECT_NAME.md](assets/docs/PROJECT_NAME.md) (or the equivalent project tech doc, e.g. `assets/docs/THOT_APP.md`)
 
 ---
 
@@ -59,9 +59,10 @@ cd [project-name]
 
 | Document                                                | Description                                                                  |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [Architecture](docs/PROJECT_NAME.md)                    | Complete technical reference (or project equivalent like `docs/THOT_APP.md`) |
-| [Active roadmap](docs/archive/vX_Y/vX_Y_Z_IMPLEMENT.md) | Current milestone plan (highest-numbered version directory)                  |
-| [Agent protocols](.agent/DEV_RULES.md)                  | Cross-project workflow and naming conventions                                |
+| [Architecture](assets/docs/PROJECT_NAME.md)                    | Complete technical reference (or project equivalent like `assets/docs/THOT_APP.md`) |
+| [Goals](assets/docs/GOALS.md)                                  | What this project is for — the review yardstick                                     |
+| [Active roadmap](assets/docs/archive/vX_Y/vX_Y_Z_IMPLEMENT.md) | Current milestone plan (highest-numbered version directory)                         |
+| [Agent protocols](.agents/AGENTS.md)                           | Redirect to the global protocol — cross-project workflow and naming conventions      |
 
 ---
 
