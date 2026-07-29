@@ -6,6 +6,14 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.2.1 — 2026-07-29 — State the CD collaboration's whole point where nobody can miss it
+
+**Why**: the model's purpose was present in `CLAUDE_DESIGN_COLLAB.md` but buried three levels deep as a sub-bullet ("pin the contract EARLY … not a guess"), so a rooted-joy session inverted it — surfaces with fully-described behavior reached the packet without their data shapes, and the owner watched an agent conclude his own written specs were missing. His read afterwards: *"the whole point of what we're doing should be clear in the collab agent doc — if not, we'll prob have issues."* Correct.
+
+**§ The one invariant now opens with the point as a headline**: CC declares the data in and out BEFORE CD designs, so CD never does back-end work and `REVERSE_GAPS` only collects what the prototype pushes BEYOND what was declared. Three consequences stated under it: a surface arriving without its contract forces CD to invent one (a back-end decision made by the design side, found at handback); `REVERSE_GAPS` degrades from a delta channel into a dumping ground for our own undone homework, burying the real findings; and the owner's prose is the INPUT to that declaration, with deriving entities/fields/states/endpoints from it named as CC-side work.
+
+---
+
 ## v5.2.0 — 2026-07-28 — The twin capture: Sean's UX/UI prose is the functional spec, collected from the start like goals
 
 **Why**: the CD-collab shift created an ownership gap — when planners also built the UI, carrying Sean's descriptive UX writing was automatically their job; "CD owns design" quietly read as "UX isn't mine," and in rooted-joy his multi-paragraph surface descriptions (present since the first requirements doc) were presented back to him as "no scope or plan exists." His division of labor is explicit and now doctrinal: he supplies how a feature works AND how it feels; deriving the backend/data shapes from that prose is the agent's job.

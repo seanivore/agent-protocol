@@ -44,7 +44,15 @@
 
 ## The one invariant
 
-Two things make the collaboration safe and repeatable across every phase.
+**The whole point, in one line: CC declares the data in and out BEFORE CD designs, so that CD is never doing back-end work and `REVERSE_GAPS` only ever collects what the built prototype pushes BEYOND what was declared.**
+
+That sentence is the collaboration. Everything below implements it, and every failure of this model is the same failure — the shapes weren't declared first:
+
+  + **If a surface reaches CD without its data contract, CD invents one.** That invented shape is a back-end decision made by the design side, discovered at handback, and expensive to unwind. CD is not doing anything wrong — it cannot draw a screen without knowing what is on it.
+  + **`REVERSE_GAPS` then stops working as designed.** Its job is the *delta*: what building the UI pushed into existence that planning genuinely could not foresee (the classic — a temperature readout beside a change-temperature dial, obvious once drawn, invisible before). If half the entries are "we never told them what fields exist," the channel is absorbing our own homework and the real reverse gaps get lost in the noise.
+  + **The owner's written UX/UI descriptions are the input to that declaration, not a separate nicety.** He supplies behavior and feel in prose; **deriving the entities, fields, states and endpoints from it is CC-side work** (`AGENTS.md` § V — the twin capture, and the harvest rule). A surface may be handed over as data-free ONLY after harvesting confirms nothing was ever described about it.
+
+Two mechanisms make it safe and repeatable across every phase.
 
   + **A contract seam** — CD builds "back-end-aware but back-end-untouching"
     - a `data-flow.md` contract states the entities/fields/actions; CD designs against it, does not implement it
