@@ -110,6 +110,20 @@ This means PROJECT_NAME.md grows over time as the project ships, and IMPLEMENT.m
 
 ---
 
+## Functionality & Experience Specification
+
+*(The canonical behavior repository — the goals' twin capture, `~/.agents/AGENTS.md` § V. Sean's descriptive UX/UI prose routes HERE, faithfully, the session it arrives: per surface, what it does, what the user experiences and feels, the flows and states his words imply. Quote or closely paraphrase; distill the "why" to GOALS.md but never thin the behavior here. Every build guide, packet, and design handoff HARVESTS from this section — a surface with prose here can never be called unscoped; what it can lack is an endpoint or envelope, and that is the only valid gap-flag shape.)*
+
+### [Surface / capability 1]
+
+  + [What it does — behavior, in his words where possible]
+  + [What the user experiences — the feel, the register, worked examples]
+  + [States and flows the description implies]
+
+### [Surface / capability 2]
+
+  + […]
+
 ## Strategic Roadmap
 
 Milestone-level orientation only. Detailed plans for each milestone live in `assets/docs/archive/vX_Y/vX_Y_Z_IMPLEMENT.md` (the highest-numbered version is the active living roadmap). This section exists so any agent can see the milestone shape without reading the full archive.

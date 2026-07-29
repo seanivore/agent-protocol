@@ -4,6 +4,8 @@
 
 *(This doc is never written once and closed. A project's goals accumulate at its start; each new initiative inside the project adds its own north star from its own concept document — same mechanism, same file. See `~/.agents/protocol/GAP_REVIEW.md` for how reviews use it.)*
 
+*(**The twin capture**: the descriptive UX/UI writing that seeds these goals is ALSO captured, in full fidelity, in the architecture doc's **Functionality & Experience Specification** — this file keeps the WHY; that section keeps the described behavior and feel, per surface, and every packet or design handoff harvests from it. See `~/.agents/AGENTS.md` § V.)*
+
 ---
 
 ## Enduring project goals (the why — these outlast any single build)

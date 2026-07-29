@@ -6,6 +6,20 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.2.0 — 2026-07-28 — The twin capture: Sean's UX/UI prose is the functional spec, collected from the start like goals
+
+**Why**: the CD-collab shift created an ownership gap — when planners also built the UI, carrying Sean's descriptive UX writing was automatically their job; "CD owns design" quietly read as "UX isn't mine," and in rooted-joy his multi-paragraph surface descriptions (present since the first requirements doc) were presented back to him as "no scope or plan exists." His division of labor is explicit and now doctrinal: he supplies how a feature works AND how it feels; deriving the backend/data shapes from that prose is the agent's job.
+
+**`AGENTS.md` § V gains "Capture the experience with the same discipline — the goals' twin"**: his prose routes faithfully, at arrival, into the architecture doc's **Functionality & Experience Specification** (the canonical behavior repository; GOALS.md keeps the distilled why). Distillations harvest from it, never thin it, and **no surface may be called unscoped/data-free/pending until the corpus has been harvested** — the only valid gap-flag is "described behavior X lacks endpoint/envelope Y."
+
+**`templates/PROJECT_NAME.md` gains the Functionality & Experience Specification section** (per-surface: what it does / what the user experiences and feels / implied states) with the capture-and-harvest instructions inline. **`templates/GOALS.md`** notes the twin capture so the two files name each other.
+
+**`GAP_REVIEW.md`**: Phase 1 step 1 folds the concept doc's UX writing into the spec section alongside the goals fold, and "Goals are load-bearing" gains the UX-shaped twin of the absence-vs-intent failure with the harvest-before-declaring-unscoped rule.
+
+**`CLAUDE_DESIGN_COLLAB.md`** Phase A: the brief's per-surface descriptions are HARVESTED from the spec section (never re-derived thin); a surface enters the brief as data-free only after the harvest confirms nothing was described; described surfaces ship with declared data shapes in `data-flow.md` — CD designing without a declared shape is CD doing the backend, and REVERSE_GAPS only works when the shape was declared first.
+
+---
+
 ## v5.1.0 — 2026-07-28 — GOALS.md becomes a full core file; a named cron exception
 
 **GOALS.md gets the same treatment as `PROJECT_NAME.md` and `README.md` now**: a template exists (`templates/GOALS.md`), § IV creates it explicitly at project start (seeded from the concept doc), and `GAP_REVIEW.md` Phase 1 makes explicit that a new initiative inside an existing project folds its own concept document into `GOALS.md` too, the same way a new project does — previously asserted as an outcome with no action step behind it.

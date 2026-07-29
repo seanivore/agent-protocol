@@ -71,7 +71,7 @@ Each phase differs only in the *starting artifact* CC sends. The seam and the ta
 ### Phase A — initial new-UI handoff (greenfield)
 
   + CC sends a code-free brief package
-    - `brief.md` — the thesis + a KILL list + **the complete UI build list** (every page/screen/section CD is building — nothing discovered later) + a **written functionality + UX description per surface** (lifted from the build guide's specs: what it does, what the user experiences, which states exist — behavior is DECIDED here; visual treatment is CD's)
+    - `brief.md` — the thesis + a KILL list + **the complete UI build list** (every page/screen/section CD is building — nothing discovered later) + a **written functionality + UX description per surface** (HARVESTED from the architecture doc's Functionality & Experience Specification and the owner's prose — never re-derived thin; behavior is DECIDED here; visual treatment is CD's). **A surface may enter the brief as data-free/pending ONLY after that harvest confirms nothing was described** — and every surface with described behavior ships with its declared data shapes in `data-flow.md`, because CD designing without a declared shape is CD doing the backend, and `REVERSE_GAPS` can only do its real job (catching what the prototype pushes BEYOND the declared shape) when the shape was declared first.
     - `data-flow.md` — the literal entity/field/action contract ("design to this; do not implement it")
     - an aesthetic anchor — a `controls.html` + `tokens.css` (a funnel-winning render, the human-direct CD session's converged system, or the brand doc's tokens) to lift verbatim
     - `reference/` — annotated screenshots + a LEGEND of keep/kill targets
