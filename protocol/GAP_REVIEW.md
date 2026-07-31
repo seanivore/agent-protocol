@@ -222,6 +222,20 @@ READY TO BUILD | NEEDS ANOTHER PASS | NEEDS ANOTHER PASS (NARROW)
 
 Nearly every build with a front end uses **Claude Design (CD)**. The full handoff and return protocol is `~/.agents/design/CLAUDE_DESIGN_COLLAB.md`; what belongs here is where the seam lands in the build sequence.
 
+**There are TWO seams, not one. Integration is last. Prototyping can be first.**
+
+### The early seam — Phase A-0, before deepening
+
+**A CD prototype is a gap-finding instrument, and it finds a class of gap that no review can.** Writing an end-to-end UX/UI description and building a prototype are **the same mechanism**: both force the *sequence* of a user's experience, and implied back-end decisions live in the sequence. **A gap review reads a plan. A prototype walks it.** A plan can pass every angle and still be missing an entire workflow, because no reviewer was ever made to move through it as the user.
+
+**Run A-0 when**: a surface's behavior is described but its flow has never been walked · the owner cannot produce the prose (it is expensive and not summonable on demand) · or an agent is about to make flow-shaped decisions that only look like detail decisions. Full mechanics, including the `PROVISIONAL` data-shape carve-out and its four conditions, are in `CLAUDE_DESIGN_COLLAB.md` § Phase A-0.
+
+**The trap it prevents, stated plainly because it has already cost a project a round**: an agent planned a whole client-facing negotiation workflow and surfaced one narrow fork — whether two fields were editable. The owner answered the field question correctly, with no idea a workflow had been decided. **When a fork question is about one control inside a flow nobody has walked, asking it is worse than not asking, because a confident answer to the small question reads as sign-off on the large one.** Ask for the walk instead.
+
+**Expect the plan to move, and price it correctly.** Findings that supersede careful work are the method succeeding. A decision revised before code exists costs a paragraph; the same decision revised after the back end is built costs a rebuild. The "we already decided that" reflex is the cost of the old ordering, not evidence of waste — and the reviewer or planner feeling it is usually the one who did the superseded work.
+
+### The late seam — integration
+
 **The CD return packet is integrated LAST in the build guide, immediately before testing.** Some testing happens earlier through APIs and JS — that is fine. But the front end handed back from CD integrates almost last and must then be tested itself. Because prototyping with CD is so hands-on, most testing is already done by then; **this final pass is really about verifying the backend wiring.**
 
 **Reverse gaps.** Building the UI surfaces backend needs nobody planned — the act of making the interface pushes a requirement into existence. The canonical case is a temperature *readout* next to the change-temperature dial in a climate-control UI: obvious the moment it is drawn, invisible in every prior pass. CD knows what is in the build from the carefully assembled handoff packet, so it details these precisely and may propose solutions.

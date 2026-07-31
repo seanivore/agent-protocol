@@ -52,6 +52,27 @@ That sentence is the collaboration. Everything below implements it, and every fa
   + **`REVERSE_GAPS` then stops working as designed.** Its job is the *delta*: what building the UI pushed into existence that planning genuinely could not foresee (the classic — a temperature readout beside a change-temperature dial, obvious once drawn, invisible before). If half the entries are "we never told them what fields exist," the channel is absorbing our own homework and the real reverse gaps get lost in the noise.
   + **The owner's written UX/UI descriptions are the input to that declaration, not a separate nicety.** He supplies behavior and feel in prose; **deriving the entities, fields, states and endpoints from it is CC-side work** (`AGENTS.md` § V — the twin capture, and the harvest rule). A surface may be handed over as data-free ONLY after harvesting confirms nothing was ever described about it.
 
+### The ONE carve-out — a PROVISIONAL shape, and only when the prototype is the instrument
+
+The invariant forbids CD *silently* making back-end decisions. It does not forbid deliberately using a prototype to **discover** a shape — provided the discovery is loud.
+
+**A data shape may ship labelled `PROVISIONAL` when, and only when, all four hold:**
+
+  + the surface's **behavior is described** (from the owner's prose or a design pass) but its entities/fields have genuinely not been decided yet;
+  + the provisional shape is **complete enough to bind a mock** — CD is never handed a blank;
+  + it is **marked PROVISIONAL in `data-flow.md`**, so CD knows it is being asked to test a shape rather than honour one;
+  + **every divergence lands in `REVERSE_GAPS.md`** as a first-class entry. A prototype that quietly drifts from a provisional shape has produced nothing.
+
+**This is Phase A-0's mechanism and belongs nowhere else.** In an ordinary Phase A the shapes are decided and provisional is a cop-out. The distinction is intent: A-0 declares provisionally *in order to* be corrected; Phase A declares definitively and treats correction as a finding.
+
+### Ask for the flow, not the field
+
+**When you find yourself writing a narrow question to the owner about one control — "should the client be able to edit the price?" — stop. That is very often a whole undesigned user flow presenting itself as a detail.**
+
+The case this comes from: an agent planned a client-facing negotiation workflow end to end and surfaced exactly one question, about whether two fields were editable. The owner answered the field question correctly and in good faith (*"yes, in negotiations all things are up for negotiation"*) with no idea a workflow had been decided. He later wrote the flow out himself, and it implied a different back end than the one already planned.
+
+**The countermeasure is to ask for the walk**: *"here is the flow as I understand it, step by step from the user's first tap — where is this wrong?"* An owner who cannot summon a UI/UX essay on demand can almost always correct a walk. **And a fork question that cannot be asked as a walk is a signal the flow itself is undesigned** — which is a bigger finding than the fork.
+
 Two mechanisms make it safe and repeatable across every phase.
 
   + **A contract seam** — CD builds "back-end-aware but back-end-untouching"
@@ -75,6 +96,24 @@ Two mechanisms make it safe and repeatable across every phase.
 ## The three phases
 
 Each phase differs only in the *starting artifact* CC sends. The seam and the tags are constant.
+
+### Phase A-0 — the early prototype, run as a gap-finding instrument (optional, and increasingly the default)
+
+**Runs BEFORE deepening and before the formal gate — sometimes before the design passes.** Its output is not a front end you keep. Its output is **findings**.
+
+**Why it exists.** Written end-to-end UX/UI description and visual prototyping are **the same mechanism, and they are interchangeable.** Both force the *sequence* of a user's experience, and implied back-end decisions live in the sequence. A gap review **reads** a plan; neither of these reads — they **walk**. That is why they surface things reviews structurally cannot, and it is why a plan can pass every review and still be missing a workflow.
+
+**The owner's constraint that makes this doctrine rather than a nicety.** The prose is expensive and cannot be summoned to order. In Sean's words: *"writing that took hours and it is not a skill I can summon. That is why I'm pointing out that prototyping with CD does the same thing as me writing like that. They are interchangable. I either write exactly what to design, or by working with CD we edit prototypes getting to that same exact point… With CD I don't need to do the writing. It replaces the writing, only rarely requiring it in much smaller form."*
+
+**So: never wait on prose that may never come.** If a surface needs the walk, route it to A-0.
+
+  + CC sends a **reduced** packet — the complete UI build list, the described behavior harvested as always, `data-flow.md` with shapes marked decided or **`PROVISIONAL`**, and the aesthetic anchor. No copy deck is required; placeholder copy is expected and is not a finding.
+  + CD returns a prototype **and, as the real deliverable, its divergences** — every place the drawn flow needed something the packet did not have.
+  + CC folds those into `REVERSE_GAPS.md` and *then* deepens, designs and gates against the corrected picture.
+
+**Expect the plan to change, and do not read that as waste.** *"The need to fix plans already written feels like inefficiency but that is not the case."* A decision revised before code exists costs a paragraph; the same decision revised after the back end is built costs a rebuild. **An agent that has just watched its careful work superseded by an owner's prose or a prototype is looking at the method succeeding, and the "reinventing the wheel" feeling is the cost of the old ordering, not evidence of waste.**
+
+**What A-0 does NOT do.** It does not replace Phase A, it does not pin the contract, and it does not license shipping surfaces data-free — see the carve-out above, all four conditions. **And it only surfaces gaps in surfaces that are IN the build list**; a screen nobody listed will not be prototyped and will not be found. Breadth of the build list is still CC's job and still comes first.
 
 ### Phase A — initial new-UI handoff (greenfield)
 
@@ -187,6 +226,7 @@ Describe the vocabulary and the mechanism, not just the visible content — I'm 
 
 ## Changelog
 
+- **v1.5.0** (2026-07-30) — **Phase A-0, the early prototype as a gap-finding instrument**, plus the `PROVISIONAL` carve-out to the invariant and the **ask-for-the-flow-not-the-field** rule. Writing an end-to-end UX description and prototyping are the SAME mechanism and are interchangeable: both *walk* a flow, where implied back-end decisions live, while a gap review only *reads*. Because the prose is expensive and cannot be summoned on demand (*"not a skill I can summon"*), A-0 is how a surface gets its walk without waiting on writing that may never come. Guarded: A-0 never replaces Phase A, never pins the contract, requires all four `PROVISIONAL` conditions, and only finds gaps in surfaces already on the build list.
 - **v1.4.0** (2026-07-22) — the **under-specification doctrine** (§ What Claude Design is): precision goes to the seam, looseness goes to the design — the packet transfers data-flow-per-surface + written UI/UX (states are behavior, not design freedom), then deliberately under-specs the treatment; the only two must-be-exact things are the seam field names and the handback tags; the prototype is a discovery tool feeding `REVERSE_GAPS.md`; the five-beat method line.
 - **v1.3.0** (2026-07-22) — the **packet-is-CD's-whole-world** rule (§ What Claude Design is): CD's context stays UI-and-design-only — it never reads build guides; the packet distills each surface self-contained; **fixed elements** (Stripe mounted elements, Maps embeds — style-through-hooks-only) are named per surface; the **architecture line** (must-match vs CD-free) is stated explicitly.
 - **v1.0.0** (2026-07-09) — first version, extracted from `DEV_RULES.md` and reconciled with the everlastings `CLAUDE_DESIGN_PARALLEL_BUILD.md`. The three phases (initial handoff / mid-build gap-list / return-after-implementation 1:1 re-sync), the contract seam + PORTABLE/SEAM/SANDBOX-ONLY taxonomy, the "safe to copy" trap, the loop + retrofit caveat, and the paste-ready "describe what you built" round-trip prompt.

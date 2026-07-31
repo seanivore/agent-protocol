@@ -6,6 +6,16 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.3.0 — 2026-07-30 — Prototyping is a gap-finding instrument: the early CD seam (Phase A-0)
+
+**Why**: a rooted-joy planning round finished five design passes, and then the owner wrote one end-to-end UI/UX description that superseded parts of two of them — not because the passes were careless, but because **writing a flow and prototyping a flow are the same mechanism, and a gap review is not that mechanism.** A review *reads* a plan; both of the others *walk* it, and implied back-end decisions live in the sequence, which is why a plan can pass every angle and still be missing a whole workflow. The owner also named the constraint that makes this doctrine rather than preference: the prose is expensive and cannot be produced to order — *"writing that took hours and it is not a skill I can summon… prototyping with CD does the same thing. They are interchangable."* So the protocol must never sit waiting on writing that may never come.
+
+**`design/CLAUDE_DESIGN_COLLAB.md` → v1.5.0** gains **Phase A-0**, an early prototype run *before* deepening whose deliverable is findings rather than a front end; a **`PROVISIONAL` data-shape carve-out** to the one invariant, gated on four conditions (behavior described, shape complete enough to bind a mock, labelled in `data-flow.md`, every divergence landing in `REVERSE_GAPS.md`) so that discovery is loud rather than silent; and the **ask-for-the-flow-not-the-field** rule. A-0 is explicitly guarded: it never replaces Phase A, never pins the contract, and **only finds gaps in surfaces already on the build list** — breadth remains CC's job and still comes first.
+
+**`protocol/GAP_REVIEW.md` § The Claude Design seam** now names **two seams instead of one** — integration stays last, prototyping can be first — and records the CONTRACT-PAYMENTS trap as doctrine: an agent planned an entire negotiation workflow and surfaced a single fork about whether two fields were editable; the owner answered the small question in good faith with no idea a workflow had been decided. **A confident answer to a small question reads as sign-off on the large one, so asking it is worse than not asking.** Both documents also price the consequence honestly: findings that supersede careful work are the method succeeding, and the "we already decided that" reflex is the cost of the old ordering, not evidence of waste.
+
+---
+
 ## v5.2.1 — 2026-07-29 — State the CD collaboration's whole point where nobody can miss it
 
 **Why**: the model's purpose was present in `CLAUDE_DESIGN_COLLAB.md` but buried three levels deep as a sub-bullet ("pin the contract EARLY … not a guess"), so a rooted-joy session inverted it — surfaces with fully-described behavior reached the packet without their data shapes, and the owner watched an agent conclude his own written specs were missing. His read afterwards: *"the whole point of what we're doing should be clear in the collab agent doc — if not, we'll prob have issues."* Correct.
