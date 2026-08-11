@@ -6,6 +6,12 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.4.0 — 2026-08-11 — The staging domain standard: `dev.<apex>`, protection stays on
+
+**Why**: rooted-joy's staging domain was named `rooted-joy.ckheals.com` (after the Vercel project), which (a) confused the owner three weeks later — the name looks like a product surface, not a testing target — and (b) permanently spends a meaningful subdomain the business can never use for a real landing page. Separately, GIT_AND_DEPLOY still instructed "turn preview protection OFF during development," which live inspection showed obsolete: Vercel's default Standard Protection (`ssoProtection: all_except_custom_domains`) already exempts custom domains, so a custom staging subdomain is publicly reachable for webhooks, auth redirects, and agent browser testing while every raw `*.vercel.app` URL stays protected.
+
+**What changed** (GIT_AND_DEPLOY.md § Environments): every future project's staging domain is **`dev.<apex>`** — grey-cloud CNAME, attached to the Vercel project, and explicitly **assigned to track `dev`** (attaching alone leaves it on production). Deployment protection is never turned off project-wide; the old instruction is superseded in place. Also recorded why staging must live under the apex's registrable domain at all: cookies, CORS, and WebAuthn RP IDs behave as production only there (`.vercel.app` is on the Public Suffix List). Existing projects keep their recorded staging names — no churn.
+
 ## v5.3.0 — 2026-07-30 — Prototyping is a gap-finding instrument: the early CD seam (Phase A-0)
 
 **Why**: a rooted-joy planning round finished five design passes, and then the owner wrote one end-to-end UI/UX description that superseded parts of two of them — not because the passes were careless, but because **writing a flow and prototyping a flow are the same mechanism, and a gap review is not that mechanism.** A review *reads* a plan; both of the others *walk* it, and implied back-end decisions live in the sequence, which is why a plan can pass every angle and still be missing a whole workflow. The owner also named the constraint that makes this doctrine rather than preference: the prose is expensive and cannot be produced to order — *"writing that took hours and it is not a skill I can summon… prototyping with CD does the same thing. They are interchangable."* So the protocol must never sit waiting on writing that may never come.
