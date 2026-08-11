@@ -97,3 +97,4 @@ The protocol ran from v1 through v4.11.0 as a single `DEV_RULES.md` file distrib
 - **v4.8.0 / v4.8.1** — peer agents established as gate-grade for B/C/D under five guardrails; angle A stays external; angle D given its two charges.
 - **v4.9.0** — environment-key discipline: every scope seeded correctly at once.
 - **v4.10.0 / v4.11.0** — human-hands items formalized as SETUP, owned by planning and empty before execution opens.
+- 2026-08-11 — CLAUDE_DESIGN_COLLAB.md header version corrected v1.4.0 → v1.5.0 (drift: the v1.5.0 changelog entry landed 2026-07-30 without the header bump).
