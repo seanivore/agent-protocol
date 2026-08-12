@@ -6,6 +6,12 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.4.1 — 2026-08-12 — Correction: Vercel protection does NOT exempt staging custom domains
+
+**Why**: first end-to-end implementation of the v5.4.0 staging standard (on `dev.thots.august.style`, Thot v6 setup) hit a Vercel SSO wall that the v5.4.0 note said could not happen. Live docs (updated 2026-07) confirm current Standard Protection protects ALL non-production URLs *including custom domains pinned to a preview branch*; `all_except_custom_domains` is a legacy API value that no longer exempts branch domains; domain-level exceptions are Enterprise / a $150-per-month Pro add-on. The v5.4.0 claim was taken from settings inspection, never verified by an actual request against a branch-pinned custom domain (`dev.ckheals.com` was standardized but never created). Also learned: protection is stamped per deployment at build time, so settings changes only affect subsequent deployments.
+
+**What changed** (GIT_AND_DEPLOY.md § Environments): the "protection stays ON, never turned off project-wide" instruction is replaced with a deliberate per-project choice — public-content projects set `ssoProtection: null` so the staging domain is genuinely public; sensitive projects keep Vercel Authentication and use authenticated-browser driving plus Protection Bypass for Automation (or the paid exceptions add-on). The `dev.<apex>` naming rule and the registrable-domain rationale stand unchanged.
+
 ## v5.4.0 — 2026-08-11 — The staging domain standard: `dev.<apex>`, protection stays on
 
 **Why**: rooted-joy's staging domain was named `rooted-joy.ckheals.com` (after the Vercel project), which (a) confused the owner three weeks later — the name looks like a product surface, not a testing target — and (b) permanently spends a meaningful subdomain the business can never use for a real landing page. Separately, GIT_AND_DEPLOY still instructed "turn preview protection OFF during development," which live inspection showed obsolete: Vercel's default Standard Protection (`ssoProtection: all_except_custom_domains`) already exempts custom domains, so a custom staging subdomain is publicly reachable for webhooks, auth redirects, and agent browser testing while every raw `*.vercel.app` URL stays protected.
