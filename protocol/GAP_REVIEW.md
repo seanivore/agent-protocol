@@ -230,11 +230,15 @@ Nearly every build with a front end uses **Claude Design (CD)**. The full handof
 
 **Run A-0 when**: a surface's behavior is described but its flow has never been walked · the owner cannot produce the prose (it is expensive and not summonable on demand) · or an agent is about to make flow-shaped decisions that only look like detail decisions. Full mechanics, including the `PROVISIONAL` data-shape carve-out and its four conditions, are in `CLAUDE_DESIGN_COLLAB.md` § Phase A-0.
 
+**A-0 is NOT the default, and reaching for it by reflex costs a round.** Skip it whenever the UI needs are already defined — which, once Sean has written his descriptive UX/UI prose, is the normal case rather than the lucky one. His lived experience across builds up to and including an entire storefront admin back end: CD's ordinary handback arrives final or near-final and its reverse gaps are minimal, so an early prototype round would have been a step backwards. Route to A-0 only when a flow is genuinely undescribed. And if a live CD session reveals mid-flight that the shape is moving under you, back up to A-0 *then* — that call reads far better from inside the session than from the planning thread guessing at it in advance.
+
 **The trap it prevents, stated plainly because it has already cost a project a round**: an agent planned a whole client-facing negotiation workflow and surfaced one narrow fork — whether two fields were editable. The owner answered the field question correctly, with no idea a workflow had been decided. **When a fork question is about one control inside a flow nobody has walked, asking it is worse than not asking, because a confident answer to the small question reads as sign-off on the large one.** Ask for the walk instead.
 
 **Expect the plan to move, and price it correctly.** Findings that supersede careful work are the method succeeding. A decision revised before code exists costs a paragraph; the same decision revised after the back end is built costs a rebuild. The "we already decided that" reflex is the cost of the old ordering, not evidence of waste — and the reviewer or planner feeling it is usually the one who did the superseded work.
 
 ### The late seam — integration
+
+**On a project where CD builds the WHOLE front end, the gate lands after the handback, not before it.** There is no front-end plan for reviewers to certify while CD still holds the front end; what the orchestrator certifies before handoff is the packet and the seam. The gap reviews then run on the integrated result — real files, real wiring — which is also the first moment the reverse gaps are actually known. Backend slices keep the ordinary ordering: gated before they are built.
 
 **The CD return packet is integrated LAST in the build guide, immediately before testing.** Some testing happens earlier through APIs and JS — that is fine. But the front end handed back from CD integrates almost last and must then be tested itself. Because prototyping with CD is so hands-on, most testing is already done by then; **this final pass is really about verifying the backend wiring.**
 
