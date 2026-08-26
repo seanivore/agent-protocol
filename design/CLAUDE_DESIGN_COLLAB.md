@@ -97,7 +97,7 @@ Two mechanisms make it safe and repeatable across every phase.
 
 Each phase differs only in the *starting artifact* CC sends. The seam and the tags are constant.
 
-### Phase A-0 — the early prototype, run as a gap-finding instrument (optional, and increasingly the default)
+### Phase A-0 — the early prototype, run as a gap-finding instrument (optional, and NOT the default)
 
 **Runs BEFORE deepening and before the formal gate — sometimes before the design passes.** Its output is not a front end you keep. Its output is **findings**.
 
@@ -106,6 +106,8 @@ Each phase differs only in the *starting artifact* CC sends. The seam and the ta
 **The owner's constraint that makes this doctrine rather than a nicety.** The prose is expensive and cannot be summoned to order. In Sean's words: *"writing that took hours and it is not a skill I can summon. That is why I'm pointing out that prototyping with CD does the same thing as me writing like that. They are interchangable. I either write exactly what to design, or by working with CD we edit prototypes getting to that same exact point… With CD I don't need to do the writing. It replaces the writing, only rarely requiring it in much smaller form."*
 
 **So: never wait on prose that may never come.** If a surface needs the walk, route it to A-0.
+
+**But when the prose already exists, skip A-0 — it is a fallback, not a warm-up.** *(Corrected 2026-08-26; the previous "increasingly the default" framing was wrong.)* Sean's experience is that CD's ordinary handback arrives final or near-final with minimal reverse gaps, on builds as large as a complete storefront admin back end, so inserting a prototype round ahead of a well-described build costs a lap and returns nothing. A-0 fires for genuinely undescribed flows, and it stays available mid-flight: if a live CD session starts revealing that the shape is moving, back up to A-0 at that moment.
 
   + CC sends a **reduced** packet — the complete UI build list, the described behavior harvested as always, `data-flow.md` with shapes marked decided or **`PROVISIONAL`**, and the aesthetic anchor. No copy deck is required; placeholder copy is expected and is not a finding.
   + CD returns a prototype **and, as the real deliverable, its divergences** — every place the drawn flow needed something the packet did not have.
