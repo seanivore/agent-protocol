@@ -6,6 +6,14 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.4.2 — 2026-08-26 — No agent sign-off on commits; the harness default is switched off
+
+**Why**: an agent working in `get-paid` reported "all nine commits lack the `Co-Authored-By` trailer" as a defect against protocol — and flagged it hard enough to offer a rebase and force-push to fix it. It was not a protocol rule at all. It comes from the Claude Code system prompt, which instructs a `Co-Authored-By: Claude <model>` trailer on every commit in every project regardless of what the project's own conventions say. § IX said nothing about trailers, so the agent had no way to tell the product default apart from Sean's convention and defaulted to the louder one. Sean's own read: *"I don't really see the need for agents to sign off if it is their commit. It is honestly pretty evident which are mine and which were an agents."*
+
+**What changed** (AGENTS.md § IX Writing Mechanics): the commits bullet gains an explicit **no `Co-Authored-By`, no agent sign-off** rule, naming the harness default as the source so a future agent recognizes it rather than obeying it. The default is also switched off at the machine level — `attribution.commit: ""` in `~/.claude/settings.json`, which suppresses the trailer for every project at once. Note `includeCoAuthoredBy` is the deprecated spelling of the same control; `attribution` is the current key. The rule records that a reappearing trailer means the setting was lost, so the fix is to restore the setting rather than to strip commits by hand.
+
+**The general lesson, worth carrying**: where a product default and this protocol disagree, silence in the protocol reads as assent. Anything the harness does automatically that Sean does not want has to be written down here as a negative rule, not just left unmentioned.
+
 ## v5.4.1 — 2026-08-12 — Correction: Vercel protection does NOT exempt staging custom domains
 
 **Why**: first end-to-end implementation of the v5.4.0 staging standard (on `dev.thots.august.style`, Thot v6 setup) hit a Vercel SSO wall that the v5.4.0 note said could not happen. Live docs (updated 2026-07) confirm current Standard Protection protects ALL non-production URLs *including custom domains pinned to a preview branch*; `all_except_custom_domains` is a legacy API value that no longer exempts branch domains; domain-level exceptions are Enterprise / a $150-per-month Pro add-on. The v5.4.0 claim was taken from settings inspection, never verified by an actual request against a branch-pinned custom domain (`dev.ckheals.com` was standardized but never created). Also learned: protection is stamped per deployment at build time, so settings changes only affect subsequent deployments.
