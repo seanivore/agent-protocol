@@ -6,6 +6,14 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.6.0 — 2026-09-11 — New standing order: draft, then edit, before publishing anything
+
+**Why**: while hand-reviewing a resume document built across many agent sessions, Sean found a claim specific enough to the project it was written for that it was risky left in a document meant to get him hired — the kind of thing a human writer would have caught and cut on a silent re-read, but that survives when a first pass ships as the final pass. His own framing: *"Writing too often is done without reflection... it doesn't mean we shouldn't be making up for that in literally everything being written."* He extended the same complaint to chat output — long, repetitive status messages a human cannot read as fast as they're produced.
+
+**What changed** (AGENTS.md § III STANDING ORDERS): added **"Draft, then edit — before every document and every message,"** placed right after "Read whole." Both orders counter the same reflex — treating a first pass as good enough — one on the input side (skimming instead of reading), the new one on the output side (publishing instead of revising). It applies to documents and to ordinary chat replies alike, and it explicitly says Sean's own message length and speed are never a model to imitate — a fast, unedited message from him is still just data, not a style cue.
+
+**The general lesson, worth carrying**: a rule that only prevents adding bad content is incomplete without a matching rule that catches bad content already drafted. Generation is cheap; the revision pass is where quality actually gets decided, and nothing forces that pass to happen unless it's written down as a standing order.
+
 ## v5.5.0 — 2026-08-26 — Two reversals: no custom staging subdomains, and A-0 is not the default
 
 **Why (staging domains)**: the `dev.<apex>` standard was introduced in v5.4.0 on the belief that a branch-pinned custom domain escapes Vercel's SSO wall. v5.4.1 disproved that belief the following day — but only patched the protection claim and left the subdomain mandate standing, so the rule kept costing DNS slots for a benefit that no longer existed. Sean, setting up `rss-feed` and now short on subdomain slots: *"an agent had the inaccurate assumption that using a dev custom URL would eliminate the need to turn off SSO. We confirmed that was not true and two projects created custom dev URLs in the DNS now and I am running out of sub domain spots… We do not create our own staging URLs, it has no actual value."*
