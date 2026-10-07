@@ -6,6 +6,22 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.7.0 — 2026-10-06 — One writing standard for every reader
+
+**Why**: the protocol split writing into two modes. Agent documents were dense by default, and the readable "human-formatted" layout was opt-in. Sean suspected that the looser agent-to-agent style, especially around gap reviews, had seeped into writing in general. His direction: *"instead of working towards exclusively human-accommodating or non-human-accommodating writing, we should treat the reader as universal, aiming instead for clarity and structure that can benefit us all."* He also asked that the v5.6.0 draft-then-edit order not read as one-size-fits-all.
+
+**What changed**
+
+  - AGENTS.md § IX is now WRITING. It opens with the universal-reader standard. Headings are categorical. Indentation shows belonging. Formatting is used only for emphasis or grouping, each form has one meaning, and emphasis appears at most once per bullet. Sentences are short, and run-ons are rewritten, not stitched together with em dashes. All of these are defaults that serve lower cognitive load, not laws. The "Dense by default" bullet is gone.
+  - AGENTS.md § III "Draft, then edit" now describes revision as iterative. Writers reread mid-sentence, restructure, and start again from a better point. Length fits the purpose, so a draft should not be too long or too short.
+  - `references/HUMAN_FORMATTING.md` became `references/WRITING_LAYOUT.md`. The opt-in gate is removed. The frame and worked examples stay, and Sean's notes on headings, indenting, and emphasis are folded in.
+  - DEVELOPER_PROFILE.md and GAP_REVIEW.md point to the one standard. Gap-review findings files are written to it too.
+  - Three project auto-memories that said "stay dense unless asked" now point to the new file.
+
+**Not done on purpose**: older text in these documents was not rewritten. It migrates when someone next edits it substantially. Restyling is not trimming: the change is to shape, never to content, and the repeated counter-reflex instructions stay.
+
+**The general lesson**: a style allowed in one corner of a system spreads to the rest. One standard, with narrow named exemptions, is easier to hold than two modes with a switch between them.
+
 ## v5.6.0 — 2026-09-11 — New standing order: draft, then edit, before publishing anything
 
 **Why**: while hand-reviewing a resume document built across many agent sessions, Sean found a claim specific enough to the project it was written for that it was risky left in a document meant to get him hired — the kind of thing a human writer would have caught and cut on a silent re-read, but that survives when a first pass ships as the final pass. His own framing: *"Writing too often is done without reflection... it doesn't mean we shouldn't be making up for that in literally everything being written."* He extended the same complaint to chat output — long, repetitive status messages a human cannot read as fast as they're produced.
