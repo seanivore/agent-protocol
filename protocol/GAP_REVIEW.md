@@ -23,6 +23,8 @@ Run it top to bottom. Every phase names its **precondition**, its **actor**, and
 - **`assets/docs/GOALS.md`** — what the project is FOR.
 - **The living architecture document** — the system as it actually is. Read first by angle C; brought current after execution.
 
+Every one of these documents follows the writing standard in `~/.agents/AGENTS.md` § IX, findings files included. Agent-to-agent documents get no looser style. The only exemptions are code fences, byte-exact anchors, and the verbatim prompt blocks.
+
 ---
 
 ## Goals are load-bearing
@@ -195,6 +197,8 @@ OUTPUT
 Write your findings to: assets/docs/archive/vX_X/vX_X_X_GAP_REVIEW_<X>.md
 Rank the gaps by how likely each is to derail the build: location, what is wrong or
 missing, the concrete fix. Add the single most important "if you fix one thing" insight.
+Write it for any reader: categorical headings, short sentences, no em-dash run-ons,
+at most one emphasis per bullet, each formatting device used for one purpose.
 End with exactly one verdict line:
 READY TO BUILD | NEEDS ANOTHER PASS | NEEDS ANOTHER PASS (NARROW)
 ```
