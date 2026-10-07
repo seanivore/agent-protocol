@@ -8,7 +8,7 @@ It rests on one inversion: **with today's tools, generating code is fast and che
 
 ## Start here
 
-**[`AGENTS.md`](AGENTS.md)** is the entry point — the one document an agent reads at the start of every session. It is 177 lines, and it maps everything else.
+**[`AGENTS.md`](AGENTS.md)** is the entry point — the one document an agent reads at the start of every session. It maps everything else.
 
 The core of it, briefly:
 
@@ -29,7 +29,7 @@ The core of it, briefly:
 | [`protocol/GIT_AND_DEPLOY.md`](protocol/GIT_AND_DEPLOY.md) | branching, tags, environments, key discipline |
 | [`protocol/MEMORY_ROUTING.md`](protocol/MEMORY_ROUTING.md) | which tier a given fact belongs in |
 | [`design/`](design/) | the interactive-design method and the Claude Design handoff |
-| [`references/`](references/) | service guides — CDN, Stripe, research, copywriting |
+| [`references/`](references/) | reference guides — CDN, Stripe, research, copywriting, writing layout |
 | [`templates/`](templates/) | starting points for a project's architecture doc, README, and build guide |
 
 ---
