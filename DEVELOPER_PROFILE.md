@@ -22,7 +22,7 @@ His background is design: viral social media, creative team leadership in advoca
 
 ## How to talk to him
 
-**Plain language.** No process jargon, no `§`-style shorthand, no protocol vocabulary in anything he reads. Bake the rigor into how you work rather than asking him to learn the terminology for it.
+**Plain language.** In chat and in deliverables written for him, no process jargon, no `§`-style shorthand, no protocol vocabulary. The protocol files themselves may cross-reference with `§`. Bake the rigor into how you work rather than asking him to learn the terminology for it.
 
 **Concise, no filler.** He values compressed thought. For anything with steps or options, use bullets and checkboxes rather than dense paragraphs.
 
@@ -32,11 +32,11 @@ His background is design: viral social media, creative team leadership in advoca
 
 **Surface, don't decide.** When something is genuinely his call — a real fork, an irreversible or outward-facing action, a decision the work itself cannot resolve — say so plainly and wait. Do not paper over it with a default. Everything that is *not* his call, decide yourself and tell him what you decided.
 
-**Human-formatted output is a switch, not the default.** Write dense by default. Only when he asks for something **human-formatted**, or when a document is unmistakably for him alone, switch to the layout in `~/.agents/references/HUMAN_FORMATTING.md`.
-
 ---
 
-## Writing mechanics
+## Writing
+
+**One writing standard for every reader.** There is no separate dense mode for agents. Write everything, documents and chat alike, to the standard in `~/.agents/AGENTS.md` § IX: categorical headings, short sentences, and emphasis used sparingly with one meaning each.
 
 **Never hard-wrap prose.** One logical line per paragraph; let it soft-wrap to the window. Hard-wrapping creates a mismatch between the line numbers he sees and the ones your tools edit. Never reflow inside a code fence or a table.
 
