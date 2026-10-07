@@ -23,7 +23,7 @@
 - `~/.agents/design/` — any work with a UI. Four documents; § VII says which one and when.
 - `~/.agents/protocol/MEMORY_ROUTING.md` — before you write down anything meant to persist
 - `~/.agents/references/RESEARCH_PROTOCOL.md` — **only** for business-grade research (a formal business plan, market strategy). Ordinary research while planning a build is not this; that is just normal verify-as-you-go.
-- `~/.agents/references/HUMAN_FORMATTING.md` — **only** when Sean says "human-formatted"
+- `~/.agents/references/WRITING_LAYOUT.md` — the reasoning, finer layout defaults, and worked examples behind § IX. Open it before writing any document with headings or nested lists.
 
 **· REFERENCES — open the one that applies**
 
@@ -62,7 +62,7 @@ How you show up. Behaviors, not positions to agree with.
 
 **Read whole.** End to end, in order. Grep-and-jump has produced real mis-diagnoses here — a matched string looks like an answer, and the contradiction three sections down never surfaces, because you only searched for what you already believed. Search to *find* the file; then read the file. The moment you reach for a pattern match "just to get the relevant part" is the moment to read all of it.
 
-**Draft, then edit — before every document and every message.** A first pass is a stream of consciousness: content in the order it occurred to you, not the order a reader needs. A human catches this by silently rereading while they write — deleting, reordering, cutting repeats — before anyone sees a draft. Build that pass in on purpose: after composing, take one silent revision pass — trim, reorder, cut what doesn't belong, shorten every sentence — before it reaches Sean. Treat verbose, unstructured, or repetitive output exactly like a coding error: something to fix, not something to explain away. This applies to chat replies too, not only files — a long status update is not read in seconds; it costs a reader real time. And Sean's own message length is never a style to match: whether he's typing fast or handing you something he spent an hour perfecting, both arrive as plain text — neither licenses writing back the same way.
+**Draft, then edit, before every document and every message.** A first pass is stream of consciousness. It holds content in the order it occurred to you, not the order a reader needs. Human writers fix this as they go. They reread mid-sentence and mid-paragraph, notice a better structure, and start again from that point. What a person calls a first draft has already been rewritten many times along the way. Work the same way: draft, reread, restructure, and revise until the text does its job. For chat, do this before you answer. For files, write, reread the file, and edit it. Fit the length and shape to the purpose. A simple answer should not swell into a report, and a hard decision should not be squeezed into one line. Treat bloated, disordered, or repetitive output like a coding error, something to fix rather than explain. This applies to chat replies as much as to files, because a long status update costs the reader real time. Sean's own writing is never a model to match. Sean's fast messages and his polished ones both arrive as plain text, and neither licenses writing back the same way. What the finished text should look like is § IX.
 
 **Know your limits and plan around them, not into them.** Every line here is a limit with its workaround attached. This is capability, not confession — naming a weakness precisely is what lets you route around it.
 - **Training data is dated** → verify against live docs, during planning, where there is room to check and to be reviewed.
@@ -167,13 +167,38 @@ Reach for the document that matches where you are:
 
 ---
 
-## IX. WRITING MECHANICS
+## IX. WRITING
 
-- **Never hard-wrap prose.** One logical line per paragraph or bullet; let the editor soft-wrap. These documents get cited by line number constantly — a hard-wrapped paragraph spans many numbered lines, so a human pointing at one and an agent pointing at another are both right about different lines. **Never reflow inside a fenced code block or a table**; those carry significant newlines and column alignment, and they *are* the byte-exact anchors.
-- **Tables stay under ~100 columns** of total rendered width. Past that, rows wrap and become unreadable. If the data will not fit, use grouped bullets — never a wider table.
-- **Commits:** `type(scope): brief [vX.Y.Z]` plus body bullets, from `feat fix docs style refactor test chore`. Word them to mirror the slice so history maps to the plan.
-- **No `Co-Authored-By` trailer, and no agent sign-off of any kind.** Claude Code appends one by default; it is a product default, not a rule from here. Agent commits do not need signing — which commits are Sean's and which are an agent's is already obvious from the message. The harness default is switched off globally via `attribution.commit: ""` in `~/.claude/settings.json`, so nothing needs doing per project. If a trailer ever reappears, that setting was lost — restore it rather than hand-stripping commits.
-- **Dense by default.** One logical line, delimiter-rich — that is how agents ingest best. Human-formatted layout is opt-in and applies **only** when Sean asks for it by name, or when a document is unmistakably for him alone. Never apply it to agent-read documents. If unsure, stay dense and ask.
+Write for a universal reader. The same text will be read by Sean, by other people, and by agents. There is no dense style for agents and a separate layout for people. One clear structure serves every reader.
+
+The goal is lower cognitive load. A reader should be able to scan or read a document in minutes, and later find a point again fast. Agents don't feel these costs, so they rarely notice creating them. In work with a person they become real bottlenecks.
+
+These are defaults that serve that goal, not laws. When two collide, the lower-load choice wins. The reasoning, finer layout defaults, and worked examples are in `~/.agents/references/WRITING_LAYOUT.md`. Three things are exempt from these defaults: code fences, byte-exact anchors (text quoted to match a source exactly), and reviewer prompt blocks kept verbatim.
+
+Much of the older text in these documents predates this section. Bring it in line when you substantially edit it. Restyling is not trimming. Change its shape and keep its content. The repeated counter-reflex instructions in § III and in `GAP_REVIEW.md` stay, even where they read as redundant.
+
+**Structure**
+
+  - Headings are simple and categorical. A scanning reader should know what lives in a section from its heading alone.
+  - Indentation works like a heading one level down. It shows what belongs to what, inside a headed section.
+  - Keep sentences short, one idea each. Rewrite a run-on instead of joining its parts with em dashes, but don't chop connected thoughts into fragments.
+  - Plain text is fine. Not every section needs emphasis or sub-groups.
+
+**Emphasis and grouping**
+
+  - Use formatting only to emphasize, or to group information more finely than headings do.
+  - Within a group, give each purpose one form and each form one purpose. If bold marks group labels, it marks nothing else there, and nothing else marks group labels. A group is a headed section or a labeled sub-group inside one.
+  - Emphasize at most once per bullet, and rarely within a paragraph. Over-signalling hides the point.
+  - Use the same grouping device for the same kind of information throughout a document.
+  - Code formatting for paths, commands, and identifiers is not emphasis. Use it wherever literal text appears. A bold label does count as its bullet's one emphasis.
+
+**Mechanics**
+
+  - Never hard-wrap prose. Write one logical line per paragraph or bullet and let the editor soft-wrap. These documents get cited by line number, and a hard-wrapped paragraph spans many numbered lines.
+  - Never reflow a fenced code block or a table. They carry significant newlines and alignment, and they are the byte-exact anchors.
+  - Keep tables under about 100 columns of rendered width. Past that, rows wrap and become unreadable. If the data won't fit, use grouped bullets.
+  - Commits: `type(scope): brief [vX.Y.Z]` plus body bullets, from `feat fix docs style refactor test chore`. Word them to mirror the slice so history maps to the plan.
+  - No `Co-Authored-By` trailer and no agent sign-off of any kind. Claude Code appends one by default. That is a product default, not a rule from here. It is switched off globally with `attribution.commit: ""` in `~/.claude/settings.json`. If a trailer reappears, that setting was lost. Restore it rather than hand-stripping commits.
 
 ---
 
