@@ -6,6 +6,19 @@ Version numbers here track the protocol itself, not any project.
 
 ---
 
+## v5.7.1 — 2026-10-27 — Release steps: annotated tags, tag every production push, return to dev
+
+**Why**: Sean shipped a one-entry copy fix to production by following the guides and hit three gaps. The step 4 commands said `main`, but 360-design's production branch is `design-360`, so the push failed. Nothing said how to write the description GitHub shows next to a tag. And no guide said to switch back to `dev`, which leaves the next edit sitting on production. It was also unclear whether a content-only release deserved a tag at all.
+
+**What changed** (GIT_AND_DEPLOY.md)
+
+  - The branches section notes that some projects name production differently and says to substitute that name for `main`.
+  - Step 4 now finds the last tag with `git describe`, creates an annotated tag (`git tag -a` with `-m` paragraphs), pushes it, and ends with `git checkout dev`.
+  - New rule: every push to `main` gets the next tag. Patch for fixes and content, minor for features, major for rebuilds.
+  - "Human-readable labels belong in the commit body or the GitHub release" was replaced: the annotated tag message is the label.
+
+**Also**: 360-design's `ENTRY_SOP.md` § 11 and README now carry the same flow with `design-360` written out. Sean's personal `~/.cheat_sheet` was cut to that one flow.
+
 ## v5.7.0 — 2026-10-06 — One writing standard for every reader
 
 **Why**: the protocol split writing into two modes. Agent documents were dense by default, and the readable "human-formatted" layout was opt-in. Sean suspected that the looser agent-to-agent style, especially around gap reviews, had seeped into writing in general. His direction: *"instead of working towards exclusively human-accommodating or non-human-accommodating writing, we should treat the reader as universal, aiming instead for clarity and structure that can benefit us all."* He also asked that the v5.6.0 draft-then-edit order not read as one-size-fits-all.
