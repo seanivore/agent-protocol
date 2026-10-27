@@ -12,6 +12,8 @@ Branching, merging, tagging, and the platforms they publish to. **Check the curr
 
 Because everything reaches `main` by fast-forward from `dev`, `dev` is always at or ahead of `main` and the two never drift apart.
 
+Some projects name production differently. 360-design uses `design-360`. Substitute it for `main` in every command below.
+
 ---
 
 ## Starting a project
@@ -50,10 +52,16 @@ git checkout dev && git merge --ff-only feat/<name> && git push origin dev
 
 ```bash
 git checkout main && git merge --ff-only dev && git push origin main
-git tag vX.Y.Z && git push origin vX.Y.Z
+git describe --tags --abbrev=0        # the last tag, to pick the next number
+git tag -a vX.Y.Z -m "vX.Y.Z — one-line summary" -m "- what changed" -m "- what changed"
+git push origin vX.Y.Z
+git checkout dev
 ```
 
-Tags are pure numeric — `v3.1.2`, never `v3.1.2-fix`. Human-readable labels belong in the commit body or the GitHub release. Re-pointing a tag means deleting and recreating it.
+  - Every push to `main` gets the next tag: patch for fixes and content, minor for features, major for rebuilds.
+  - Use an annotated tag (`-a` with `-m`). Its message is the description GitHub shows beside the tag, and each `-m` is a paragraph.
+  - Tags are pure numeric: `v3.1.2`, never `v3.1.2-fix`. Re-pointing a tag means deleting and recreating it.
+  - End on `dev`, so the next change doesn't start on production.
 
 ---
 
